@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace RB_Tree
 {
@@ -15,25 +10,30 @@ namespace RB_Tree
     {
         RB_Tree<int> tree;
         TreeDraw<int> drawing;
+        string logpath;
         public MainForm()
         {
             InitializeComponent();
             tree = new RB_Tree<int>();
-            drawing = new TreeDraw<int>(drawPanel, NodeCountLabel, TreeDepthLabel, BlackDepthLabel, tree);
+            drawing = new TreeDraw<int>(DrawPanel, NodeCountLabel, TreeDepthLabel, BlackDepthLabel, tree);
             HideButtons();
             InitButtonsLocations();
-            manualToolStripMenuItem_Click(null, null);
+            Manual_Insert(null, null);
             NodeCountLabel.Text = "0";
             TreeDepthLabel.Text = "0";
             BlackDepthLabel.Text = "0";
             label8.Text = string.Empty;
+            logpath = "tree.log";
+            if (!File.Exists(logpath)) 
+                File.Create(logpath).Close();
+            InitToolTip();
         }
 
         private void InitButtonsLocations()
         {
             label1.Location = new Point(this.ClientSize.Width / 2 - 74, label1.Location.Y);
             InsertTextBox.Location = new Point(this.ClientSize.Width / 2, InsertTextBox.Location.Y);
-            InsertButton.Location = new Point(this.ClientSize.Width / 2, InsertButton.Location.Y);
+            FromFileButton.Location = new Point(this.ClientSize.Width / 2, FromFileButton.Location.Y);
             RandomButton.Location = new Point(this.ClientSize.Width / 2 - 40, RandomButton.Location.Y);
             Numeric.Location = new Point(this.ClientSize.Width / 2 + 40, Numeric.Location.Y);
             label2.Location = new Point(this.ClientSize.Width / 2 - 74, label2.Location.Y);
@@ -46,7 +46,7 @@ namespace RB_Tree
         {
             label1.Visible = false;
             InsertTextBox.Visible = false;
-            InsertButton.Visible = false;
+            FromFileButton.Visible = false;
             RandomButton.Visible = false;
             Numeric.Visible = false;
             label2.Visible = false;
@@ -55,8 +55,18 @@ namespace RB_Tree
             SearchTextBox.Visible = false;
             label8.Visible = false;
         }
+        private void InitToolTip()
+        {
+            toolTip1.SetToolTip(ManInsertButton, "Вставить узел");
+            toolTip1.SetToolTip(FileInsertButton, "Вставить узлы из файла");
+            toolTip1.SetToolTip(RandInsertButton, "Вставить случайные узлы");
+            toolTip1.SetToolTip(ManDeleteButton, "Удалить узел");
+            toolTip1.SetToolTip(AllDeleteButton, "Очистить поле");
+            toolTip1.SetToolTip(SearchButton, "Найти узел");
+            toolTip1.SetToolTip(OpenLogButton, "Открыть файл журнала");
+        }
         
-        private void insertTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void InsertTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -66,6 +76,7 @@ namespace RB_Tree
                     tree.Insert(key);
                     drawing.Update();
                     InsertTextBox.Text = string.Empty;
+                    AddLog("вставка узла", key.ToString());
                 }
                 catch
                 {
@@ -83,6 +94,7 @@ namespace RB_Tree
                     tree.Delete(key);
                     drawing.Update();
                     DeleteTextBox.Text = string.Empty;
+                    AddLog("удаление узла", key.ToString());
                 }
                 catch
                 {
@@ -102,10 +114,12 @@ namespace RB_Tree
                     if (node != tree.nil)
                     {
                         label8.Text = "Узел найден";
+                        AddLog("поиск узла", key.ToString(), " - найден");
                     }
                     else
                     {
                         label8.Text = "Узел не найден!";
+                        AddLog("поиск узла", key.ToString(), " - не найден");
                     }
                     SearchTextBox.Text = string.Empty;
                 }
@@ -140,23 +154,27 @@ namespace RB_Tree
                 {
                     tree.Insert(num);
                 }
+                AddLog($"вставка узлов из файла {Path.GetFileName(filename)}", string.Join(",", strs), " - успешно");
                 drawing.Update();
             }
             catch
             {
-                MessageBox.Show("Wrong symbols in file", "Error while reading file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Неверный формат данных", "Ошибка при извлечении данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         private void RandomButton_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
             int count = Convert.ToInt32(Numeric.Value);
+            int[] nums = new int[count];
             for (int i = 0; i < count; i++)
             {
-                tree.Insert(rand.Next(0, 100));
+                int num = rand.Next(0, 100);
+                nums[i] = num;
+                tree.Insert(num);
             }
+            AddLog("вставка случайных узлов", string.Join(",", nums));
             drawing.Update();
         }
 
@@ -168,7 +186,7 @@ namespace RB_Tree
         {
             label9.Text = "Удаление узла из красно-черного дерева выполняется за O(log n)";
         }
-        private void manualToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Manual_Insert(object sender, EventArgs e)
         {
             HideButtons();
             label1.Visible = true;
@@ -176,14 +194,14 @@ namespace RB_Tree
             InsertInfo();
         }
 
-        private void fromfileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FromFile_Insert(object sender, EventArgs e)
         {
             HideButtons();
-            InsertButton.Visible = true;
+            FromFileButton.Visible = true;
             InsertInfo();
         }
 
-        private void randomToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Random_Insert(object sender, EventArgs e)
         {
             HideButtons();
             RandomButton.Visible = true;
@@ -191,20 +209,21 @@ namespace RB_Tree
             InsertInfo();
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Manual_Delete(object sender, EventArgs e)
         {
             HideButtons();
             label2.Visible = true;
             DeleteTextBox.Visible = true;
             DeleteInfo();
         }
-        private void deleteallToolStripMenuItem_Click(object sender, EventArgs e)
+        private void All_Delete(object sender, EventArgs e)
         {
             tree.ClearAll();
             drawing.Update();
+            AddLog("дерево очищено", "");
         }
 
-        private void searchtoolStripMenuItem3_Click(object sender, EventArgs e)
+        private void Manual_Search(object sender, EventArgs e)
         {
             HideButtons();
             label7.Visible = true;
@@ -213,7 +232,32 @@ namespace RB_Tree
             label8.Text = string.Empty;
             label9.Text = "Поиск узла в красно-черном дереве выполняется за O(log n)";
         }
-
-        
+        private void About_Program(object sender, EventArgs e)
+        {
+            About form = new About();
+            form.Show();
+        }
+        private void OpenLog(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("notepad.exe", logpath);
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("Файл журнала не существует", "Файл не найден", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void AddLog(string op, string num, string other="")
+        {
+            StreamWriter sw = File.AppendText(logpath);
+            string log = $"{DateTime.Now.ToLocalTime()}  {op} {num}";
+            if (other != "")
+            {
+                log = string.Concat(log, other);
+            }
+            sw.WriteLine(log);
+            sw.Close();
+        }
     }
 }
