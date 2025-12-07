@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openlogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,8 +65,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.openlogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenLogButton = new System.Windows.Forms.Button();
             this.ManInsertButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
@@ -73,6 +72,7 @@
             this.AllDeleteButton = new System.Windows.Forms.Button();
             this.RandInsertButton = new System.Windows.Forms.Button();
             this.ManDeleteButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Numeric)).BeginInit();
             this.panel1.SuspendLayout();
@@ -88,7 +88,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1427, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1624, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,6 +99,13 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.fileToolStripMenuItem.Text = "Файл";
+            // 
+            // openlogToolStripMenuItem
+            // 
+            this.openlogToolStripMenuItem.Name = "openlogToolStripMenuItem";
+            this.openlogToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.openlogToolStripMenuItem.Text = "Открыть журнал";
+            this.openlogToolStripMenuItem.Click += new System.EventHandler(this.OpenLog);
             // 
             // editToolStripMenuItem
             // 
@@ -117,27 +124,27 @@
             this.fromfileToolStripMenuItem,
             this.randomToolStripMenuItem});
             this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-            this.ToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
             this.ToolStripMenuItem1.Text = "Вставка";
             // 
             // manualToolStripMenuItem
             // 
             this.manualToolStripMenuItem.Name = "manualToolStripMenuItem";
-            this.manualToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manualToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.manualToolStripMenuItem.Text = "Вручную";
             this.manualToolStripMenuItem.Click += new System.EventHandler(this.Manual_Insert);
             // 
             // fromfileToolStripMenuItem
             // 
             this.fromfileToolStripMenuItem.Name = "fromfileToolStripMenuItem";
-            this.fromfileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fromfileToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.fromfileToolStripMenuItem.Text = "Из файла";
             this.fromfileToolStripMenuItem.Click += new System.EventHandler(this.FromFile_Insert);
             // 
             // randomToolStripMenuItem
             // 
             this.randomToolStripMenuItem.Name = "randomToolStripMenuItem";
-            this.randomToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.randomToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.randomToolStripMenuItem.Text = "Случайно";
             this.randomToolStripMenuItem.Click += new System.EventHandler(this.Random_Insert);
             // 
@@ -147,7 +154,7 @@
             this.deleteToolStripMenuItem,
             this.deleteallToolStripMenuItem});
             this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-            this.ToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem2.Size = new System.Drawing.Size(159, 26);
             this.ToolStripMenuItem2.Text = "Удаление";
             // 
             // deleteToolStripMenuItem
@@ -167,7 +174,7 @@
             // searchtoolStripMenuItem3
             // 
             this.searchtoolStripMenuItem3.Name = "searchtoolStripMenuItem3";
-            this.searchtoolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.searchtoolStripMenuItem3.Size = new System.Drawing.Size(159, 26);
             this.searchtoolStripMenuItem3.Text = "Поиск";
             this.searchtoolStripMenuItem3.Click += new System.EventHandler(this.Manual_Search);
             // 
@@ -182,7 +189,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.aboutToolStripMenuItem.Text = "О программе";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.About_Program);
             // 
@@ -195,12 +202,12 @@
             this.DrawPanel.Location = new System.Drawing.Point(12, 89);
             this.DrawPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DrawPanel.Name = "DrawPanel";
-            this.DrawPanel.Size = new System.Drawing.Size(1403, 434);
+            this.DrawPanel.Size = new System.Drawing.Size(1600, 487);
             this.DrawPanel.TabIndex = 2;
             // 
             // InsertTextBox
             // 
-            this.InsertTextBox.Location = new System.Drawing.Point(260, 678);
+            this.InsertTextBox.Location = new System.Drawing.Point(260, 747);
             this.InsertTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InsertTextBox.Name = "InsertTextBox";
             this.InsertTextBox.Size = new System.Drawing.Size(77, 22);
@@ -210,7 +217,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 682);
+            this.label1.Location = new System.Drawing.Point(187, 751);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 16);
             this.label1.TabIndex = 4;
@@ -218,7 +225,7 @@
             // 
             // FromFileButton
             // 
-            this.FromFileButton.Location = new System.Drawing.Point(388, 673);
+            this.FromFileButton.Location = new System.Drawing.Point(388, 742);
             this.FromFileButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FromFileButton.Name = "FromFileButton";
             this.FromFileButton.Size = new System.Drawing.Size(120, 33);
@@ -229,7 +236,7 @@
             // 
             // RandomButton
             // 
-            this.RandomButton.Location = new System.Drawing.Point(545, 673);
+            this.RandomButton.Location = new System.Drawing.Point(545, 742);
             this.RandomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RandomButton.Name = "RandomButton";
             this.RandomButton.Size = new System.Drawing.Size(85, 33);
@@ -240,7 +247,7 @@
             // 
             // Numeric
             // 
-            this.Numeric.Location = new System.Drawing.Point(636, 680);
+            this.Numeric.Location = new System.Drawing.Point(636, 749);
             this.Numeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Numeric.Maximum = new decimal(new int[] {
             60,
@@ -263,7 +270,7 @@
             // 
             // DeleteTextBox
             // 
-            this.DeleteTextBox.Location = new System.Drawing.Point(799, 676);
+            this.DeleteTextBox.Location = new System.Drawing.Point(799, 745);
             this.DeleteTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteTextBox.Name = "DeleteTextBox";
             this.DeleteTextBox.Size = new System.Drawing.Size(80, 22);
@@ -273,7 +280,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(731, 680);
+            this.label2.Location = new System.Drawing.Point(731, 749);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 10;
@@ -283,7 +290,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(659, 527);
+            this.label3.Location = new System.Drawing.Point(766, 592);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 20);
             this.label3.TabIndex = 11;
@@ -293,7 +300,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(575, 552);
+            this.label4.Location = new System.Drawing.Point(682, 617);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 18);
             this.label4.TabIndex = 12;
@@ -303,7 +310,7 @@
             // 
             this.NodeCountLabel.AutoSize = true;
             this.NodeCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NodeCountLabel.Location = new System.Drawing.Point(687, 552);
+            this.NodeCountLabel.Location = new System.Drawing.Point(794, 617);
             this.NodeCountLabel.Name = "NodeCountLabel";
             this.NodeCountLabel.Size = new System.Drawing.Size(46, 18);
             this.NodeCountLabel.TabIndex = 13;
@@ -313,7 +320,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(512, 579);
+            this.label5.Location = new System.Drawing.Point(619, 644);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 18);
             this.label5.TabIndex = 14;
@@ -323,7 +330,7 @@
             // 
             this.TreeDepthLabel.AutoSize = true;
             this.TreeDepthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TreeDepthLabel.Location = new System.Drawing.Point(687, 581);
+            this.TreeDepthLabel.Location = new System.Drawing.Point(794, 646);
             this.TreeDepthLabel.Name = "TreeDepthLabel";
             this.TreeDepthLabel.Size = new System.Drawing.Size(46, 18);
             this.TreeDepthLabel.TabIndex = 15;
@@ -333,7 +340,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(512, 611);
+            this.label6.Location = new System.Drawing.Point(619, 676);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 18);
             this.label6.TabIndex = 16;
@@ -343,7 +350,7 @@
             // 
             this.BlackDepthLabel.AutoSize = true;
             this.BlackDepthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BlackDepthLabel.Location = new System.Drawing.Point(687, 611);
+            this.BlackDepthLabel.Location = new System.Drawing.Point(794, 676);
             this.BlackDepthLabel.Name = "BlackDepthLabel";
             this.BlackDepthLabel.Size = new System.Drawing.Size(46, 18);
             this.BlackDepthLabel.TabIndex = 17;
@@ -352,7 +359,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(931, 682);
+            this.label7.Location = new System.Drawing.Point(931, 751);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 16);
@@ -361,7 +368,7 @@
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(989, 676);
+            this.SearchTextBox.Location = new System.Drawing.Point(989, 745);
             this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(81, 22);
@@ -372,7 +379,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(686, 643);
+            this.label8.Location = new System.Drawing.Point(793, 708);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 20);
             this.label8.TabIndex = 20;
@@ -382,7 +389,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(1121, 680);
+            this.label9.Location = new System.Drawing.Point(1121, 749);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 18);
             this.label9.TabIndex = 21;
@@ -401,13 +408,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(534, 53);
             this.panel1.TabIndex = 22;
-            // 
-            // openlogToolStripMenuItem
-            // 
-            this.openlogToolStripMenuItem.Name = "openlogToolStripMenuItem";
-            this.openlogToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.openlogToolStripMenuItem.Text = "Открыть журнал";
-            this.openlogToolStripMenuItem.Click += new System.EventHandler(this.OpenLog);
             // 
             // OpenLogButton
             // 
@@ -519,7 +519,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1427, 738);
+            this.ClientSize = new System.Drawing.Size(1624, 806);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

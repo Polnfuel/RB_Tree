@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Linq;
 
 namespace RB_Tree
 {
@@ -27,6 +28,7 @@ namespace RB_Tree
             if (!File.Exists(logpath)) 
                 File.Create(logpath).Close();
             InitToolTip();
+            DrawPanel.Size = new Size(this.ClientSize.Width - 20, DrawPanel.Height);
         }
 
         private void InitButtonsLocations()
@@ -73,10 +75,13 @@ namespace RB_Tree
                 try
                 {
                     int key = Convert.ToInt32(InsertTextBox.Text);
-                    tree.Insert(key);
-                    drawing.Update();
-                    InsertTextBox.Text = string.Empty;
-                    AddLog("вставка узла", key.ToString());
+                    if (key < 1000 && key > -100)
+                    {
+                        tree.Insert(key);
+                        drawing.Update();
+                        InsertTextBox.Text = string.Empty;
+                        AddLog("вставка узла", key.ToString());
+                    }
                 }
                 catch
                 {
@@ -145,16 +150,18 @@ namespace RB_Tree
             try
             {
                 string[] strs = text.Trim().Split(',');
-                int[] nums = new int[strs.Length];
-                for (int i = 0; i < strs.Length; i++)
+                string[] nums = new string[strs.Length];
+                int i = 0;
+                foreach (string str in strs)
                 {
-                    nums[i] = Convert.ToInt32(strs[i]);
+                    int num = Convert.ToInt32(str);
+                    if (num > -100 && num < 1000)
+                    {
+                        nums[i++] = str;
+                        tree.Insert(num);
+                    }
                 }
-                foreach (int num in nums)
-                {
-                    tree.Insert(num);
-                }
-                AddLog($"вставка узлов из файла {Path.GetFileName(filename)}", string.Join(",", strs), " - успешно");
+                AddLog($"вставка узлов из файла {Path.GetFileName(filename)}", string.Join(",", nums, 0, i), " - успешно");
                 drawing.Update();
             }
             catch
@@ -170,7 +177,7 @@ namespace RB_Tree
             int[] nums = new int[count];
             for (int i = 0; i < count; i++)
             {
-                int num = rand.Next(0, 100);
+                int num = rand.Next(0, 1000);
                 nums[i] = num;
                 tree.Insert(num);
             }
