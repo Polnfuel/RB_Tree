@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RB_Tree
 {
-    public enum ColorN
+    public enum NodeColor
     {
         Red, Black
     }
@@ -16,7 +12,7 @@ namespace RB_Tree
         public RB_Node<T> Parent;
         public RB_Node<T> Left;
         public RB_Node<T> Right;
-        public ColorN Color;
+        public NodeColor Color;
         public RB_Node()
         {
             

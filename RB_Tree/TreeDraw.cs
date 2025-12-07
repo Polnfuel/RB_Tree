@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace RB_Tree
 {
-    internal class TreeDraw<T> where T : IComparable<T>
+    public class TreeDraw<T> where T : IComparable<T>
     {
         private Graphics g;
         private Font font;
-        private Panel drawPanel;
+        private Panel drawpanel;
         private RB_Tree<T> tree;
 
         private Label countlabel;
@@ -21,32 +21,31 @@ namespace RB_Tree
         public TreeDraw(Panel panel, Label count, Label depth, Label blackdepth, RB_Tree<T> rb_tree)
         {
             font = new Font("Segoe UI", 12, FontStyle.Bold);
-            drawPanel = panel;
-            drawPanel.Paint += new PaintEventHandler(drawPanel_Paint);
+            drawpanel = panel;
+            drawpanel.Paint += new PaintEventHandler(DrawPanel_Paint);
             countlabel = count;
             depthlabel = depth;
             blackdepthlabel = blackdepth;
-            g = drawPanel.CreateGraphics();
+            g = drawpanel.CreateGraphics();
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             tree = rb_tree;
             positions = new Dictionary<RB_Node<T>, Point>();
         }
         
-        private void drawPanel_Paint(object sender, PaintEventArgs e)
+        private void DrawPanel_Paint(object sender, PaintEventArgs e)
         {
             if (tree.root != tree.nil)
-                DrawTreeSimple();
+                DrawTree();
         }
         public void Update()
         {
             positions.Clear();
             totalwidth = CalculateNodePosition(tree.root, 0, 0);
-            drawPanel.Invalidate();
+            drawpanel.Invalidate();
             UpdateStatistics();
         }
         
-
         private const int NODE_RADIUS = 15;
         private const int VERTICAL_SPACING = 35;
         private int CalculateNodePosition(RB_Node<T> node, int offset, int depth)
@@ -66,11 +65,11 @@ namespace RB_Tree
             return left + nodewidth + right;
         }
 
-        private void DrawTreeSimple()
+        private void DrawTree()
         {
             g.Clear(Color.White);
 
-            int xoffset = (drawPanel.Width - totalwidth) / 2;
+            int xoffset = (drawpanel.Width - totalwidth) / 2;
 
             foreach (var kvp in positions)
             {
@@ -99,7 +98,7 @@ namespace RB_Tree
                 int x = pos.X + xoffset;
                 int y = pos.Y;
 
-                Brush brush = node.Color == ColorN.Red ? Brushes.Red : Brushes.Black;
+                Brush brush = node.Color == NodeColor.Red ? Brushes.Red : Brushes.Black;
 
                 g.FillEllipse(brush, x - NODE_RADIUS, y - NODE_RADIUS, NODE_RADIUS * 2, NODE_RADIUS * 2);
 
@@ -133,10 +132,9 @@ namespace RB_Tree
             if (node != tree.nil)
             {
                 TreeBlackDepth(node.Left, ref count);
-                if (node.Color == ColorN.Black) count++;
+                if (node.Color == NodeColor.Black) count++;
             }
         }
-
         private void UpdateStatistics()
         {
             int nodecount = 0;
@@ -148,16 +146,15 @@ namespace RB_Tree
             depthlabel.Text = depth.ToString();
             blackdepthlabel.Text = blackdepth.ToString();
         }
-
         public void MarkNode(RB_Node<T> node)
         {
-            DrawTreeSimple();
+            DrawTree();
             foreach (var kvp in positions)
             {
                 if (kvp.Key == node)
                 {
                     Point pos = kvp.Value;
-                    pos.X = (drawPanel.Width - totalwidth) / 2 + pos.X;
+                    pos.X = (drawpanel.Width - totalwidth) / 2 + pos.X;
                     Pen pen = new Pen(Color.Gold, 3.0f);
                     g.DrawEllipse(pen, pos.X - NODE_RADIUS - pen.Width / 2, pos.Y - NODE_RADIUS - pen.Width / 2, (NODE_RADIUS) * 2 + pen.Width, (NODE_RADIUS) * 2 + pen.Width);
                     break;

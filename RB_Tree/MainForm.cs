@@ -8,9 +8,9 @@ namespace RB_Tree
 {
     public partial class MainForm : Form
     {
-        RB_Tree<int> tree;
-        TreeDraw<int> drawing;
-        string logpath;
+        private RB_Tree<int> tree;
+        private TreeDraw<int> drawing;
+        private string logpath;
         public MainForm()
         {
             InitializeComponent();
@@ -186,6 +186,7 @@ namespace RB_Tree
         {
             label9.Text = "Удаление узла из красно-черного дерева выполняется за O(log n)";
         }
+
         private void Manual_Insert(object sender, EventArgs e)
         {
             HideButtons();
@@ -193,14 +194,12 @@ namespace RB_Tree
             InsertTextBox.Visible = true;
             InsertInfo();
         }
-
         private void FromFile_Insert(object sender, EventArgs e)
         {
             HideButtons();
             FromFileButton.Visible = true;
             InsertInfo();
         }
-
         private void Random_Insert(object sender, EventArgs e)
         {
             HideButtons();
@@ -208,7 +207,6 @@ namespace RB_Tree
             Numeric.Visible = true;
             InsertInfo();
         }
-
         private void Manual_Delete(object sender, EventArgs e)
         {
             HideButtons();
@@ -222,7 +220,6 @@ namespace RB_Tree
             drawing.Update();
             AddLog("дерево очищено", "");
         }
-
         private void Manual_Search(object sender, EventArgs e)
         {
             HideButtons();
@@ -232,6 +229,7 @@ namespace RB_Tree
             label8.Text = string.Empty;
             label9.Text = "Поиск узла в красно-черном дереве выполняется за O(log n)";
         }
+
         private void About_Program(object sender, EventArgs e)
         {
             About form = new About();
