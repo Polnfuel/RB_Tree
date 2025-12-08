@@ -15,7 +15,7 @@ namespace RB_Tree
         public NodeColor Color;
         public RB_Node()
         {
-            
+
         }
         public RB_Node(T key)
         {

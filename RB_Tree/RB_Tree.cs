@@ -89,7 +89,7 @@ namespace RB_Tree
                         z.Parent.Parent.Color = NodeColor.Red;
                         z = z.Parent.Parent;
                     }
-                    else 
+                    else
                     {
                         if (z == z.Parent.Right)
                         {
@@ -111,7 +111,7 @@ namespace RB_Tree
                         z.Parent.Parent.Color = NodeColor.Red;
                         z = z.Parent.Parent;
                     }
-                    else 
+                    else
                     {
                         if (z == z.Parent.Left)
                         {

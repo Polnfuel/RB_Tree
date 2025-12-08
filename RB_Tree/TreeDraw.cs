@@ -32,7 +32,7 @@ namespace RB_Tree
             tree = rb_tree;
             positions = new Dictionary<RB_Node<T>, Point>();
         }
-        
+
         private void DrawPanel_Paint(object sender, PaintEventArgs e)
         {
             if (tree.root != tree.nil)
@@ -45,14 +45,14 @@ namespace RB_Tree
             drawpanel.Invalidate();
             UpdateStatistics();
         }
-        
+
         private const int NODE_RADIUS = 15;
         private const int VERTICAL_SPACING = 35;
         private int CalculateNodePosition(RB_Node<T> node, int offset, int depth)
         {
             if (node == tree.nil) return 0;
 
-            int nodewidth = NODE_RADIUS + 2; 
+            int nodewidth = NODE_RADIUS + 2;
 
             int left = CalculateNodePosition(node.Left, offset, depth + 1);
             int right = CalculateNodePosition(node.Right, offset + left + nodewidth, depth + 1);
@@ -135,7 +135,7 @@ namespace RB_Tree
                 if (node.Color == NodeColor.Black) count++;
             }
         }
-        private void UpdateStatistics()
+        public int UpdateStatistics()
         {
             int nodecount = 0;
             SubTreeCount(tree.root, ref nodecount);
@@ -145,6 +145,7 @@ namespace RB_Tree
             countlabel.Text = nodecount.ToString();
             depthlabel.Text = depth.ToString();
             blackdepthlabel.Text = blackdepth.ToString();
+            return nodecount;
         }
         public void MarkNode(RB_Node<T> node)
         {
@@ -160,7 +161,7 @@ namespace RB_Tree
                     break;
                 }
             }
-            
+
         }
     }
 }

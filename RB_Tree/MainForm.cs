@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.IO;
 using System.Diagnostics;
-using System.Linq;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace RB_Tree
 {
@@ -25,12 +24,16 @@ namespace RB_Tree
             BlackDepthLabel.Text = "0";
             label8.Text = string.Empty;
             logpath = "tree.log";
-            if (!File.Exists(logpath)) 
+            if (!File.Exists(logpath))
                 File.Create(logpath).Close();
             InitToolTip();
             DrawPanel.Size = new Size(this.ClientSize.Width - 20, DrawPanel.Height);
         }
-
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (File.Exists("lasttree.txt") && File.ReadAllText("lasttree.txt") != string.Empty)
+                LoadFromFile("lasttree.txt");
+        }
         private void InitButtonsLocations()
         {
             label1.Location = new Point(this.ClientSize.Width / 2 - 74, label1.Location.Y);
@@ -67,7 +70,7 @@ namespace RB_Tree
             toolTip1.SetToolTip(SearchButton, "Найти узел");
             toolTip1.SetToolTip(OpenLogButton, "Открыть файл журнала");
         }
-        
+
         private void InsertTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -253,7 +256,7 @@ namespace RB_Tree
                 MessageBox.Show("Файл журнала не существует", "Файл не найден", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void AddLog(string op, string num, string other="")
+        private void AddLog(string op, string num, string other = "")
         {
             StreamWriter sw = File.AppendText(logpath);
             string log = $"{DateTime.Now.ToLocalTime()}  {op} {num}";
@@ -263,6 +266,25 @@ namespace RB_Tree
             }
             sw.WriteLine(log);
             sw.Close();
+        }
+
+        private void Recursive(RB_Node<int> node, ref int[] array, ref int index)
+        {
+            if (node == tree.nil) return;
+            array[index++] = node.Key;
+            Recursive(node.Left, ref array, ref index);
+            Recursive(node.Right, ref array, ref index);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string path = "lasttree.txt";
+            int nodecount = drawing.UpdateStatistics();
+            int[] array = new int[nodecount];
+            int index = 0;
+            Recursive(tree.root, ref array, ref index);
+            string treestr = string.Join(",", array);
+            File.WriteAllText(path, treestr);
         }
     }
 }
