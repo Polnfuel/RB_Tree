@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace RB_Tree
+﻿namespace RB_Tree
 {
     public partial class About : Form
     {

@@ -1,8 +1,4 @@
-п»їusing System;
 using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
 
 namespace RB_Tree
 {
@@ -27,7 +23,6 @@ namespace RB_Tree
             if (!File.Exists(logpath))
                 File.Create(logpath).Close();
             InitToolTip();
-            DrawPanel.Size = new Size(this.ClientSize.Width - 20, DrawPanel.Height);
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -36,16 +31,27 @@ namespace RB_Tree
         }
         private void InitButtonsLocations()
         {
-            label1.Location = new Point(this.ClientSize.Width / 2 - 74, label1.Location.Y);
-            InsertTextBox.Location = new Point(this.ClientSize.Width / 2, InsertTextBox.Location.Y);
-            FromFileButton.Location = new Point(this.ClientSize.Width / 2, FromFileButton.Location.Y);
-            RandomButton.Location = new Point(this.ClientSize.Width / 2 - 40, RandomButton.Location.Y);
-            Numeric.Location = new Point(this.ClientSize.Width / 2 + 40, Numeric.Location.Y);
-            label2.Location = new Point(this.ClientSize.Width / 2 - 74, label2.Location.Y);
-            DeleteTextBox.Location = new Point(this.ClientSize.Width / 2, DeleteTextBox.Location.Y);
-            label7.Location = new Point(this.ClientSize.Width / 2 - 74, label7.Location.Y);
-            SearchTextBox.Location = new Point(this.ClientSize.Width / 2, SearchTextBox.Location.Y);
-            label9.Location = new Point(60, label9.Location.Y);
+            label1.Location = new Point(this.ClientSize.Width / 2 - 74, this.ClientSize.Height - 80);
+            InsertTextBox.Location = new Point(this.ClientSize.Width / 2, this.ClientSize.Height - 80);
+            FromFileButton.Location = new Point(this.ClientSize.Width / 2, this.ClientSize.Height - 80);
+            RandomButton.Location = new Point(this.ClientSize.Width / 2 - 40, this.ClientSize.Height - 80);
+            Numeric.Location = new Point(this.ClientSize.Width / 2 + 50, this.ClientSize.Height - 74);
+            label2.Location = new Point(this.ClientSize.Width / 2 - 74, this.ClientSize.Height - 80);
+            DeleteTextBox.Location = new Point(this.ClientSize.Width / 2, this.ClientSize.Height - 80);
+            label7.Location = new Point(this.ClientSize.Width / 2 - 74, this.ClientSize.Height - 80);
+            SearchTextBox.Location = new Point(this.ClientSize.Width / 2, this.ClientSize.Height - 80);
+            label9.Location = new Point(60, this.ClientSize.Height - 80);
+
+            label3.Location = new Point(this.ClientSize.Width / 2, this.ClientSize.Height - 250);
+            label4.Location = new Point(this.ClientSize.Width / 2 - 85, this.ClientSize.Height - 218);
+            label5.Location = new Point(this.ClientSize.Width / 2 - 150, this.ClientSize.Height - 186);
+            label6.Location = new Point(this.ClientSize.Width / 2 - 150, this.ClientSize.Height - 154);
+            NodeCountLabel.Location = new Point(this.ClientSize.Width / 2 + 30, this.ClientSize.Height - 218);
+            TreeDepthLabel.Location = new Point(this.ClientSize.Width / 2 + 30, this.ClientSize.Height - 186);
+            BlackDepthLabel.Location = new Point(this.ClientSize.Width / 2 + 30, this.ClientSize.Height - 154);
+            label8.Location = new Point(this.ClientSize.Width / 2 - 10, this.ClientSize.Height - 120);
+
+            DrawPanel.Size = new Size(this.ClientSize.Width - 24, this.ClientSize.Height - 370);
         }
         private void HideButtons()
         {
@@ -62,13 +68,13 @@ namespace RB_Tree
         }
         private void InitToolTip()
         {
-            toolTip1.SetToolTip(ManInsertButton, "Р’СЃС‚Р°РІРёС‚СЊ СѓР·РµР»");
-            toolTip1.SetToolTip(FileInsertButton, "Р’СЃС‚Р°РІРёС‚СЊ СѓР·Р»С‹ РёР· С„Р°Р№Р»Р°");
-            toolTip1.SetToolTip(RandInsertButton, "Р’СЃС‚Р°РІРёС‚СЊ СЃР»СѓС‡Р°Р№РЅС‹Рµ СѓР·Р»С‹");
-            toolTip1.SetToolTip(ManDeleteButton, "РЈРґР°Р»РёС‚СЊ СѓР·РµР»");
-            toolTip1.SetToolTip(AllDeleteButton, "РћС‡РёСЃС‚РёС‚СЊ РїРѕР»Рµ");
-            toolTip1.SetToolTip(SearchButton, "РќР°Р№С‚Рё СѓР·РµР»");
-            toolTip1.SetToolTip(OpenLogButton, "РћС‚РєСЂС‹С‚СЊ С„Р°Р№Р» Р¶СѓСЂРЅР°Р»Р°");
+            toolTip1.SetToolTip(ManInsertButton, "Вставить узел");
+            toolTip1.SetToolTip(FileInsertButton, "Вставить узлы из файла");
+            toolTip1.SetToolTip(RandInsertButton, "Вставить случайные узлы");
+            toolTip1.SetToolTip(ManDeleteButton, "Удалить узел");
+            toolTip1.SetToolTip(AllDeleteButton, "Очистить поле");
+            toolTip1.SetToolTip(SearchButton, "Найти узел");
+            toolTip1.SetToolTip(OpenLogButton, "Открыть файл журнала");
         }
 
         private void InsertTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -83,7 +89,7 @@ namespace RB_Tree
                         tree.Insert(key);
                         drawing.Update();
                         InsertTextBox.Text = string.Empty;
-                        AddLog("РІСЃС‚Р°РІРєР° СѓР·Р»Р°", key.ToString());
+                        AddLog("вставка узла", key.ToString());
                     }
                 }
                 catch
@@ -102,7 +108,7 @@ namespace RB_Tree
                     tree.Delete(key);
                     drawing.Update();
                     DeleteTextBox.Text = string.Empty;
-                    AddLog("СѓРґР°Р»РµРЅРёРµ СѓР·Р»Р°", key.ToString());
+                    AddLog("удаление узла", key.ToString());
                 }
                 catch
                 {
@@ -121,13 +127,13 @@ namespace RB_Tree
                     drawing.MarkNode(node);
                     if (node != tree.nil)
                     {
-                        label8.Text = "РЈР·РµР» РЅР°Р№РґРµРЅ";
-                        AddLog("РїРѕРёСЃРє СѓР·Р»Р°", key.ToString(), " - РЅР°Р№РґРµРЅ");
+                        label8.Text = "Узел найден";
+                        AddLog("поиск узла", key.ToString(), " - найден");
                     }
                     else
                     {
-                        label8.Text = "РЈР·РµР» РЅРµ РЅР°Р№РґРµРЅ!";
-                        AddLog("РїРѕРёСЃРє СѓР·Р»Р°", key.ToString(), " - РЅРµ РЅР°Р№РґРµРЅ");
+                        label8.Text = "Узел не найден!";
+                        AddLog("поиск узла", key.ToString(), " - не найден");
                     }
                     SearchTextBox.Text = string.Empty;
                 }
@@ -164,12 +170,12 @@ namespace RB_Tree
                         tree.Insert(num);
                     }
                 }
-                AddLog($"РІСЃС‚Р°РІРєР° СѓР·Р»РѕРІ РёР· С„Р°Р№Р»Р° {Path.GetFileName(filename)}", string.Join(",", nums, 0, i), " - СѓСЃРїРµС€РЅРѕ");
+                AddLog($"вставка узлов из файла {Path.GetFileName(filename)}", string.Join(",", nums, 0, i), " - успешно");
                 drawing.Update();
             }
             catch
             {
-                MessageBox.Show("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С…", "РћС€РёР±РєР° РїСЂРё РёР·РІР»РµС‡РµРЅРёРё РґР°РЅРЅС‹С…", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Неверный формат данных", "Ошибка при извлечении данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -184,17 +190,17 @@ namespace RB_Tree
                 nums[i] = num;
                 tree.Insert(num);
             }
-            AddLog("РІСЃС‚Р°РІРєР° СЃР»СѓС‡Р°Р№РЅС‹С… СѓР·Р»РѕРІ", string.Join(",", nums));
+            AddLog("вставка случайных узлов", string.Join(",", nums));
             drawing.Update();
         }
 
         private void InsertInfo()
         {
-            label9.Text = "Р’СЃС‚Р°РІРєР° СѓР·Р»Р° РІ РєСЂР°СЃРЅРѕ-С‡РµСЂРЅРѕРµ РґРµСЂРµРІРѕ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ Р·Р° O(log n)";
+            label9.Text = "Вставка узла в красно-черное дерево выполняется за O(log n)";
         }
         private void DeleteInfo()
         {
-            label9.Text = "РЈРґР°Р»РµРЅРёРµ СѓР·Р»Р° РёР· РєСЂР°СЃРЅРѕ-С‡РµСЂРЅРѕРіРѕ РґРµСЂРµРІР° РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ Р·Р° O(log n)";
+            label9.Text = "Удаление узла из красно-черного дерева выполняется за O(log n)";
         }
 
         private void Manual_Insert(object sender, EventArgs e)
@@ -228,7 +234,7 @@ namespace RB_Tree
         {
             tree.ClearAll();
             drawing.Update();
-            AddLog("РґРµСЂРµРІРѕ РѕС‡РёС‰РµРЅРѕ", "");
+            AddLog("дерево очищено", "");
         }
         private void Manual_Search(object sender, EventArgs e)
         {
@@ -237,7 +243,7 @@ namespace RB_Tree
             SearchTextBox.Visible = true;
             label8.Visible = true;
             label8.Text = string.Empty;
-            label9.Text = "РџРѕРёСЃРє СѓР·Р»Р° РІ РєСЂР°СЃРЅРѕ-С‡РµСЂРЅРѕРј РґРµСЂРµРІРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ Р·Р° O(log n)";
+            label9.Text = "Поиск узла в красно-черном дереве выполняется за O(log n)";
         }
 
         private void About_Program(object sender, EventArgs e)
@@ -253,7 +259,7 @@ namespace RB_Tree
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("Р¤Р°Р№Р» Р¶СѓСЂРЅР°Р»Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚", "Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Файл журнала не существует", "Файл не найден", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void AddLog(string op, string num, string other = "")
@@ -285,6 +291,13 @@ namespace RB_Tree
             Recursive(tree.root, ref array, ref index);
             string treestr = string.Join(",", array);
             File.WriteAllText(path, treestr);
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            DrawPanel.Size = new Size(this.ClientSize.Width - 24, DrawPanel.Height);
+            InitButtonsLocations();
+            drawing.Update();
         }
     }
 }

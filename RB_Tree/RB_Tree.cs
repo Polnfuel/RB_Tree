@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RB_Tree
+﻿namespace RB_Tree
 {
     public class RB_Tree<T> where T : IComparable<T>
     {

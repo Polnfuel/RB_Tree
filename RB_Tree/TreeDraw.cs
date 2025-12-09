@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
-
-namespace RB_Tree
+﻿namespace RB_Tree
 {
     public class TreeDraw<T> where T : IComparable<T>
     {
@@ -20,7 +15,7 @@ namespace RB_Tree
         private int totalwidth;
         public TreeDraw(Panel panel, Label count, Label depth, Label blackdepth, RB_Tree<T> rb_tree)
         {
-            font = new Font("Segoe UI", 12, FontStyle.Bold);
+            font = new Font("Segoe UI", 11, FontStyle.Bold);
             drawpanel = panel;
             drawpanel.Paint += new PaintEventHandler(DrawPanel_Paint);
             countlabel = count;
@@ -40,19 +35,23 @@ namespace RB_Tree
         }
         public void Update()
         {
+            g.Dispose();
+            g = drawpanel.CreateGraphics();
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             positions.Clear();
             totalwidth = CalculateNodePosition(tree.root, 0, 0);
             drawpanel.Invalidate();
             UpdateStatistics();
         }
 
-        private const int NODE_RADIUS = 15;
-        private const int VERTICAL_SPACING = 35;
+        private const int NODE_RADIUS = 18;
+        private const int VERTICAL_SPACING = 50;
         private int CalculateNodePosition(RB_Node<T> node, int offset, int depth)
         {
             if (node == tree.nil) return 0;
 
-            int nodewidth = NODE_RADIUS + 2;
+            int nodewidth = NODE_RADIUS + 4;
 
             int left = CalculateNodePosition(node.Left, offset, depth + 1);
             int right = CalculateNodePosition(node.Right, offset + left + nodewidth, depth + 1);
@@ -68,6 +67,7 @@ namespace RB_Tree
         private void DrawTree()
         {
             g.Clear(Color.White);
+            Pen black = new Pen(Color.Black, 2);
 
             int xoffset = (drawpanel.Width - totalwidth) / 2;
 
@@ -81,13 +81,13 @@ namespace RB_Tree
                 if (node.Left != tree.nil && positions.ContainsKey(node.Left))
                 {
                     Point leftpos = positions[node.Left];
-                    g.DrawLine(Pens.Black, x, y, leftpos.X + xoffset, leftpos.Y);
+                    g.DrawLine(black, x, y, leftpos.X + xoffset, leftpos.Y);
                 }
 
                 if (node.Right != tree.nil && positions.ContainsKey(node.Right))
                 {
                     Point rightpos = positions[node.Right];
-                    g.DrawLine(Pens.Black, x, y, rightpos.X + xoffset, rightpos.Y);
+                    g.DrawLine(black, x, y, rightpos.X + xoffset, rightpos.Y);
                 }
             }
 

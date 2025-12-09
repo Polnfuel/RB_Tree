@@ -28,532 +28,516 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openlogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.randomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchtoolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DrawPanel = new System.Windows.Forms.Panel();
-            this.InsertTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FromFileButton = new System.Windows.Forms.Button();
-            this.InsertDialog = new System.Windows.Forms.OpenFileDialog();
-            this.RandomButton = new System.Windows.Forms.Button();
-            this.Numeric = new System.Windows.Forms.NumericUpDown();
-            this.DeleteTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.NodeCountLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TreeDepthLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.BlackDepthLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.OpenLogButton = new System.Windows.Forms.Button();
-            this.ManInsertButton = new System.Windows.Forms.Button();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.FileInsertButton = new System.Windows.Forms.Button();
-            this.AllDeleteButton = new System.Windows.Forms.Button();
-            this.RandInsertButton = new System.Windows.Forms.Button();
-            this.ManDeleteButton = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            openlogToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripMenuItem1 = new ToolStripMenuItem();
+            manualToolStripMenuItem = new ToolStripMenuItem();
+            fromfileToolStripMenuItem = new ToolStripMenuItem();
+            randomToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripMenuItem2 = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
+            deleteallToolStripMenuItem = new ToolStripMenuItem();
+            searchtoolStripMenuItem3 = new ToolStripMenuItem();
+            ToolStripMenuItem4 = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
+            DrawPanel = new Panel();
+            InsertTextBox = new TextBox();
+            label1 = new Label();
+            FromFileButton = new Button();
+            InsertDialog = new OpenFileDialog();
+            RandomButton = new Button();
+            Numeric = new NumericUpDown();
+            DeleteTextBox = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            NodeCountLabel = new Label();
+            label5 = new Label();
+            TreeDepthLabel = new Label();
+            label6 = new Label();
+            BlackDepthLabel = new Label();
+            label7 = new Label();
+            SearchTextBox = new TextBox();
+            label8 = new Label();
+            label9 = new Label();
+            panel1 = new Panel();
+            OpenLogButton = new Button();
+            ManInsertButton = new Button();
+            SearchButton = new Button();
+            FileInsertButton = new Button();
+            AllDeleteButton = new Button();
+            RandInsertButton = new Button();
+            ManDeleteButton = new Button();
+            toolTip1 = new ToolTip(components);
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Numeric).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.ToolStripMenuItem4});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1624, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, ToolStripMenuItem4 });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(1382, 28);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openlogToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.fileToolStripMenuItem.Text = "Файл";
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openlogToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(59, 24);
+            fileToolStripMenuItem.Text = "Файл";
             // 
             // openlogToolStripMenuItem
             // 
-            this.openlogToolStripMenuItem.Name = "openlogToolStripMenuItem";
-            this.openlogToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
-            this.openlogToolStripMenuItem.Text = "Открыть журнал";
-            this.openlogToolStripMenuItem.Click += new System.EventHandler(this.OpenLog);
+            openlogToolStripMenuItem.Name = "openlogToolStripMenuItem";
+            openlogToolStripMenuItem.Size = new Size(206, 26);
+            openlogToolStripMenuItem.Text = "Открыть журнал";
+            openlogToolStripMenuItem.Click += OpenLog;
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem1,
-            this.ToolStripMenuItem2,
-            this.searchtoolStripMenuItem3});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.editToolStripMenuItem.Text = "Правка";
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ToolStripMenuItem1, ToolStripMenuItem2, searchtoolStripMenuItem3 });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(74, 24);
+            editToolStripMenuItem.Text = "Правка";
             // 
             // ToolStripMenuItem1
             // 
-            this.ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manualToolStripMenuItem,
-            this.fromfileToolStripMenuItem,
-            this.randomToolStripMenuItem});
-            this.ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-            this.ToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
-            this.ToolStripMenuItem1.Text = "Вставка";
+            ToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { manualToolStripMenuItem, fromfileToolStripMenuItem, randomToolStripMenuItem });
+            ToolStripMenuItem1.Name = "ToolStripMenuItem1";
+            ToolStripMenuItem1.Size = new Size(159, 26);
+            ToolStripMenuItem1.Text = "Вставка";
             // 
             // manualToolStripMenuItem
             // 
-            this.manualToolStripMenuItem.Name = "manualToolStripMenuItem";
-            this.manualToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.manualToolStripMenuItem.Text = "Вручную";
-            this.manualToolStripMenuItem.Click += new System.EventHandler(this.Manual_Insert);
+            manualToolStripMenuItem.Name = "manualToolStripMenuItem";
+            manualToolStripMenuItem.Size = new Size(159, 26);
+            manualToolStripMenuItem.Text = "Вручную";
+            manualToolStripMenuItem.Click += Manual_Insert;
             // 
             // fromfileToolStripMenuItem
             // 
-            this.fromfileToolStripMenuItem.Name = "fromfileToolStripMenuItem";
-            this.fromfileToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.fromfileToolStripMenuItem.Text = "Из файла";
-            this.fromfileToolStripMenuItem.Click += new System.EventHandler(this.FromFile_Insert);
+            fromfileToolStripMenuItem.Name = "fromfileToolStripMenuItem";
+            fromfileToolStripMenuItem.Size = new Size(159, 26);
+            fromfileToolStripMenuItem.Text = "Из файла";
+            fromfileToolStripMenuItem.Click += FromFile_Insert;
             // 
             // randomToolStripMenuItem
             // 
-            this.randomToolStripMenuItem.Name = "randomToolStripMenuItem";
-            this.randomToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.randomToolStripMenuItem.Text = "Случайно";
-            this.randomToolStripMenuItem.Click += new System.EventHandler(this.Random_Insert);
+            randomToolStripMenuItem.Name = "randomToolStripMenuItem";
+            randomToolStripMenuItem.Size = new Size(159, 26);
+            randomToolStripMenuItem.Text = "Случайно";
+            randomToolStripMenuItem.Click += Random_Insert;
             // 
             // ToolStripMenuItem2
             // 
-            this.ToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem,
-            this.deleteallToolStripMenuItem});
-            this.ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-            this.ToolStripMenuItem2.Size = new System.Drawing.Size(159, 26);
-            this.ToolStripMenuItem2.Text = "Удаление";
+            ToolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { deleteToolStripMenuItem, deleteallToolStripMenuItem });
+            ToolStripMenuItem2.Name = "ToolStripMenuItem2";
+            ToolStripMenuItem2.Size = new Size(159, 26);
+            ToolStripMenuItem2.Text = "Удаление";
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
-            this.deleteToolStripMenuItem.Text = "Вручную";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.Manual_Delete);
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(175, 26);
+            deleteToolStripMenuItem.Text = "Вручную";
+            deleteToolStripMenuItem.Click += Manual_Delete;
             // 
             // deleteallToolStripMenuItem
             // 
-            this.deleteallToolStripMenuItem.Name = "deleteallToolStripMenuItem";
-            this.deleteallToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
-            this.deleteallToolStripMenuItem.Text = "Удалить все";
-            this.deleteallToolStripMenuItem.Click += new System.EventHandler(this.All_Delete);
+            deleteallToolStripMenuItem.Name = "deleteallToolStripMenuItem";
+            deleteallToolStripMenuItem.Size = new Size(175, 26);
+            deleteallToolStripMenuItem.Text = "Удалить все";
+            deleteallToolStripMenuItem.Click += All_Delete;
             // 
             // searchtoolStripMenuItem3
             // 
-            this.searchtoolStripMenuItem3.Name = "searchtoolStripMenuItem3";
-            this.searchtoolStripMenuItem3.Size = new System.Drawing.Size(159, 26);
-            this.searchtoolStripMenuItem3.Text = "Поиск";
-            this.searchtoolStripMenuItem3.Click += new System.EventHandler(this.Manual_Search);
+            searchtoolStripMenuItem3.Name = "searchtoolStripMenuItem3";
+            searchtoolStripMenuItem3.Size = new Size(159, 26);
+            searchtoolStripMenuItem3.Text = "Поиск";
+            searchtoolStripMenuItem3.Click += Manual_Search;
             // 
             // ToolStripMenuItem4
             // 
-            this.ToolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.ToolStripMenuItem4.Name = "ToolStripMenuItem4";
-            this.ToolStripMenuItem4.Size = new System.Drawing.Size(81, 24);
-            this.ToolStripMenuItem4.Text = "Справка";
+            ToolStripMenuItem4.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
+            ToolStripMenuItem4.Name = "ToolStripMenuItem4";
+            ToolStripMenuItem4.Size = new Size(81, 24);
+            ToolStripMenuItem4.Text = "Справка";
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
-            this.aboutToolStripMenuItem.Text = "О программе";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.About_Program);
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(187, 26);
+            aboutToolStripMenuItem.Text = "О программе";
+            aboutToolStripMenuItem.Click += About_Program;
             // 
             // DrawPanel
             // 
-            this.DrawPanel.AutoScroll = true;
-            this.DrawPanel.AutoSize = true;
-            this.DrawPanel.BackColor = System.Drawing.Color.White;
-            this.DrawPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DrawPanel.Location = new System.Drawing.Point(12, 89);
-            this.DrawPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DrawPanel.Name = "DrawPanel";
-            this.DrawPanel.Size = new System.Drawing.Size(1600, 487);
-            this.DrawPanel.TabIndex = 2;
+            DrawPanel.AutoScroll = true;
+            DrawPanel.AutoSize = true;
+            DrawPanel.BackColor = Color.White;
+            DrawPanel.BorderStyle = BorderStyle.FixedSingle;
+            DrawPanel.Location = new Point(12, 111);
+            DrawPanel.Margin = new Padding(3, 2, 3, 2);
+            DrawPanel.Name = "DrawPanel";
+            DrawPanel.Size = new Size(1358, 482);
+            DrawPanel.TabIndex = 2;
             // 
             // InsertTextBox
             // 
-            this.InsertTextBox.Location = new System.Drawing.Point(260, 747);
-            this.InsertTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InsertTextBox.Name = "InsertTextBox";
-            this.InsertTextBox.Size = new System.Drawing.Size(77, 22);
-            this.InsertTextBox.TabIndex = 3;
-            this.InsertTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InsertTextBox_KeyDown);
+            InsertTextBox.Location = new Point(260, 801);
+            InsertTextBox.Margin = new Padding(3, 2, 3, 2);
+            InsertTextBox.Name = "InsertTextBox";
+            InsertTextBox.Size = new Size(77, 27);
+            InsertTextBox.TabIndex = 3;
+            InsertTextBox.KeyDown += InsertTextBox_KeyDown;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 751);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Вставить";
+            label1.AutoSize = true;
+            label1.Location = new Point(187, 806);
+            label1.Name = "label1";
+            label1.Size = new Size(70, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Вставить";
             // 
             // FromFileButton
             // 
-            this.FromFileButton.Location = new System.Drawing.Point(388, 742);
-            this.FromFileButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.FromFileButton.Name = "FromFileButton";
-            this.FromFileButton.Size = new System.Drawing.Size(120, 33);
-            this.FromFileButton.TabIndex = 5;
-            this.FromFileButton.Text = "Выбрать файл";
-            this.FromFileButton.UseVisualStyleBackColor = true;
-            this.FromFileButton.Click += new System.EventHandler(this.InsertButton_Click);
+            FromFileButton.Location = new Point(388, 795);
+            FromFileButton.Margin = new Padding(3, 2, 3, 2);
+            FromFileButton.Name = "FromFileButton";
+            FromFileButton.Size = new Size(120, 41);
+            FromFileButton.TabIndex = 5;
+            FromFileButton.Text = "Выбрать файл";
+            FromFileButton.UseVisualStyleBackColor = true;
+            FromFileButton.Click += InsertButton_Click;
             // 
             // RandomButton
             // 
-            this.RandomButton.Location = new System.Drawing.Point(545, 742);
-            this.RandomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RandomButton.Name = "RandomButton";
-            this.RandomButton.Size = new System.Drawing.Size(85, 33);
-            this.RandomButton.TabIndex = 7;
-            this.RandomButton.Text = "Случайно";
-            this.RandomButton.UseVisualStyleBackColor = true;
-            this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
+            RandomButton.Location = new Point(545, 795);
+            RandomButton.Margin = new Padding(3, 2, 3, 2);
+            RandomButton.Name = "RandomButton";
+            RandomButton.Size = new Size(85, 41);
+            RandomButton.TabIndex = 7;
+            RandomButton.Text = "Случайно";
+            RandomButton.UseVisualStyleBackColor = true;
+            RandomButton.Click += RandomButton_Click;
             // 
             // Numeric
             // 
-            this.Numeric.Location = new System.Drawing.Point(636, 749);
-            this.Numeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Numeric.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.Numeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.Numeric.Name = "Numeric";
-            this.Numeric.Size = new System.Drawing.Size(53, 22);
-            this.Numeric.TabIndex = 8;
-            this.Numeric.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
+            Numeric.Location = new Point(636, 803);
+            Numeric.Margin = new Padding(3, 2, 3, 2);
+            Numeric.Maximum = new decimal(new int[] { 60, 0, 0, 0 });
+            Numeric.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            Numeric.Name = "Numeric";
+            Numeric.Size = new Size(53, 27);
+            Numeric.TabIndex = 8;
+            Numeric.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // DeleteTextBox
             // 
-            this.DeleteTextBox.Location = new System.Drawing.Point(799, 745);
-            this.DeleteTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DeleteTextBox.Name = "DeleteTextBox";
-            this.DeleteTextBox.Size = new System.Drawing.Size(80, 22);
-            this.DeleteTextBox.TabIndex = 9;
-            this.DeleteTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DeleteTextBox_KeyDown);
+            DeleteTextBox.Location = new Point(799, 798);
+            DeleteTextBox.Margin = new Padding(3, 2, 3, 2);
+            DeleteTextBox.Name = "DeleteTextBox";
+            DeleteTextBox.Size = new Size(80, 27);
+            DeleteTextBox.TabIndex = 9;
+            DeleteTextBox.KeyDown += DeleteTextBox_KeyDown;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(731, 749);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Удалить";
+            label2.AutoSize = true;
+            label2.Location = new Point(731, 803);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 20);
+            label2.TabIndex = 10;
+            label2.Text = "Удалить";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(766, 592);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Статистика";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label3.Location = new Point(699, 607);
+            label3.Name = "label3";
+            label3.Size = new Size(109, 20);
+            label3.TabIndex = 11;
+            label3.Text = "Статистика";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(682, 617);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 18);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Узлов: ";
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label4.Location = new Point(615, 638);
+            label4.Name = "label4";
+            label4.Size = new Size(60, 18);
+            label4.TabIndex = 12;
+            label4.Text = "Узлов: ";
             // 
             // NodeCountLabel
             // 
-            this.NodeCountLabel.AutoSize = true;
-            this.NodeCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NodeCountLabel.Location = new System.Drawing.Point(794, 617);
-            this.NodeCountLabel.Name = "NodeCountLabel";
-            this.NodeCountLabel.Size = new System.Drawing.Size(46, 18);
-            this.NodeCountLabel.TabIndex = 13;
-            this.NodeCountLabel.Text = "label5";
+            NodeCountLabel.AutoSize = true;
+            NodeCountLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            NodeCountLabel.Location = new Point(727, 638);
+            NodeCountLabel.Name = "NodeCountLabel";
+            NodeCountLabel.Size = new Size(46, 18);
+            NodeCountLabel.TabIndex = 13;
+            NodeCountLabel.Text = "label5";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(619, 644);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 18);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Высота дерева:";
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label5.Location = new Point(552, 672);
+            label5.Name = "label5";
+            label5.Size = new Size(118, 18);
+            label5.TabIndex = 14;
+            label5.Text = "Высота дерева:";
             // 
             // TreeDepthLabel
             // 
-            this.TreeDepthLabel.AutoSize = true;
-            this.TreeDepthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TreeDepthLabel.Location = new System.Drawing.Point(794, 646);
-            this.TreeDepthLabel.Name = "TreeDepthLabel";
-            this.TreeDepthLabel.Size = new System.Drawing.Size(46, 18);
-            this.TreeDepthLabel.TabIndex = 15;
-            this.TreeDepthLabel.Text = "label6";
+            TreeDepthLabel.AutoSize = true;
+            TreeDepthLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            TreeDepthLabel.Location = new Point(727, 675);
+            TreeDepthLabel.Name = "TreeDepthLabel";
+            TreeDepthLabel.Size = new Size(46, 18);
+            TreeDepthLabel.TabIndex = 15;
+            TreeDepthLabel.Text = "label6";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(619, 676);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Черная высота:";
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label6.Location = new Point(552, 712);
+            label6.Name = "label6";
+            label6.Size = new Size(117, 18);
+            label6.TabIndex = 16;
+            label6.Text = "Черная высота:";
             // 
             // BlackDepthLabel
             // 
-            this.BlackDepthLabel.AutoSize = true;
-            this.BlackDepthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BlackDepthLabel.Location = new System.Drawing.Point(794, 676);
-            this.BlackDepthLabel.Name = "BlackDepthLabel";
-            this.BlackDepthLabel.Size = new System.Drawing.Size(46, 18);
-            this.BlackDepthLabel.TabIndex = 17;
-            this.BlackDepthLabel.Text = "label7";
+            BlackDepthLabel.AutoSize = true;
+            BlackDepthLabel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            BlackDepthLabel.Location = new Point(727, 712);
+            BlackDepthLabel.Name = "BlackDepthLabel";
+            BlackDepthLabel.Size = new Size(46, 18);
+            BlackDepthLabel.TabIndex = 17;
+            BlackDepthLabel.Text = "label7";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(931, 751);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 16);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Найти";
+            label7.AutoSize = true;
+            label7.Location = new Point(931, 806);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(52, 20);
+            label7.TabIndex = 18;
+            label7.Text = "Найти";
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(989, 745);
-            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(81, 22);
-            this.SearchTextBox.TabIndex = 19;
-            this.SearchTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTextBox_KeyDown);
+            SearchTextBox.Location = new Point(989, 798);
+            SearchTextBox.Margin = new Padding(4, 5, 4, 5);
+            SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Size = new Size(81, 27);
+            SearchTextBox.TabIndex = 19;
+            SearchTextBox.KeyDown += SearchTextBox_KeyDown;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(793, 708);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 20);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "label8";
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label8.Location = new Point(726, 752);
+            label8.Name = "label8";
+            label8.Size = new Size(53, 20);
+            label8.TabIndex = 20;
+            label8.Text = "label8";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(1121, 749);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 18);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "label9";
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label9.Location = new Point(1121, 803);
+            label9.Name = "label9";
+            label9.Size = new Size(46, 18);
+            label9.TabIndex = 21;
+            label9.Text = "label9";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.OpenLogButton);
-            this.panel1.Controls.Add(this.ManInsertButton);
-            this.panel1.Controls.Add(this.SearchButton);
-            this.panel1.Controls.Add(this.FileInsertButton);
-            this.panel1.Controls.Add(this.AllDeleteButton);
-            this.panel1.Controls.Add(this.RandInsertButton);
-            this.panel1.Controls.Add(this.ManDeleteButton);
-            this.panel1.Location = new System.Drawing.Point(12, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 53);
-            this.panel1.TabIndex = 22;
+            panel1.Controls.Add(OpenLogButton);
+            panel1.Controls.Add(ManInsertButton);
+            panel1.Controls.Add(SearchButton);
+            panel1.Controls.Add(FileInsertButton);
+            panel1.Controls.Add(AllDeleteButton);
+            panel1.Controls.Add(RandInsertButton);
+            panel1.Controls.Add(ManDeleteButton);
+            panel1.Location = new Point(12, 39);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(534, 66);
+            panel1.TabIndex = 22;
             // 
             // OpenLogButton
             // 
-            this.OpenLogButton.BackgroundImage = global::RB_Tree.Properties.Resources.log_data;
-            this.OpenLogButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.OpenLogButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OpenLogButton.FlatAppearance.BorderSize = 0;
-            this.OpenLogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OpenLogButton.Location = new System.Drawing.Point(420, 11);
-            this.OpenLogButton.Name = "OpenLogButton";
-            this.OpenLogButton.Size = new System.Drawing.Size(35, 30);
-            this.OpenLogButton.TabIndex = 34;
-            this.OpenLogButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.OpenLogButton.UseVisualStyleBackColor = true;
-            this.OpenLogButton.Click += new System.EventHandler(this.OpenLog);
+            OpenLogButton.BackgroundImage = (Image)resources.GetObject("OpenLogButton.BackgroundImage");
+            OpenLogButton.BackgroundImageLayout = ImageLayout.Zoom;
+            OpenLogButton.Cursor = Cursors.Hand;
+            OpenLogButton.FlatAppearance.BorderSize = 0;
+            OpenLogButton.FlatStyle = FlatStyle.Flat;
+            OpenLogButton.Location = new Point(420, 14);
+            OpenLogButton.Margin = new Padding(3, 4, 3, 4);
+            OpenLogButton.Name = "OpenLogButton";
+            OpenLogButton.Size = new Size(35, 38);
+            OpenLogButton.TabIndex = 34;
+            OpenLogButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            OpenLogButton.UseVisualStyleBackColor = true;
+            OpenLogButton.Click += OpenLog;
             // 
             // ManInsertButton
             // 
-            this.ManInsertButton.BackgroundImage = global::RB_Tree.Properties.Resources.insert;
-            this.ManInsertButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ManInsertButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ManInsertButton.FlatAppearance.BorderSize = 0;
-            this.ManInsertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ManInsertButton.Location = new System.Drawing.Point(58, 11);
-            this.ManInsertButton.Name = "ManInsertButton";
-            this.ManInsertButton.Size = new System.Drawing.Size(35, 30);
-            this.ManInsertButton.TabIndex = 28;
-            this.ManInsertButton.Tag = "";
-            this.ManInsertButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ManInsertButton.UseVisualStyleBackColor = true;
-            this.ManInsertButton.Click += new System.EventHandler(this.Manual_Insert);
+            ManInsertButton.BackgroundImage = (Image)resources.GetObject("ManInsertButton.BackgroundImage");
+            ManInsertButton.BackgroundImageLayout = ImageLayout.Zoom;
+            ManInsertButton.Cursor = Cursors.Hand;
+            ManInsertButton.FlatAppearance.BorderSize = 0;
+            ManInsertButton.FlatStyle = FlatStyle.Flat;
+            ManInsertButton.Location = new Point(58, 14);
+            ManInsertButton.Margin = new Padding(3, 4, 3, 4);
+            ManInsertButton.Name = "ManInsertButton";
+            ManInsertButton.Size = new Size(35, 38);
+            ManInsertButton.TabIndex = 28;
+            ManInsertButton.Tag = "";
+            ManInsertButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            ManInsertButton.UseVisualStyleBackColor = true;
+            ManInsertButton.Click += Manual_Insert;
             // 
             // SearchButton
             // 
-            this.SearchButton.BackgroundImage = global::RB_Tree.Properties.Resources.loupe;
-            this.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchButton.FlatAppearance.BorderSize = 0;
-            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchButton.Location = new System.Drawing.Point(348, 11);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(35, 30);
-            this.SearchButton.TabIndex = 33;
-            this.SearchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.Manual_Search);
+            SearchButton.BackgroundImage = (Image)resources.GetObject("SearchButton.BackgroundImage");
+            SearchButton.BackgroundImageLayout = ImageLayout.Zoom;
+            SearchButton.Cursor = Cursors.Hand;
+            SearchButton.FlatAppearance.BorderSize = 0;
+            SearchButton.FlatStyle = FlatStyle.Flat;
+            SearchButton.Location = new Point(348, 14);
+            SearchButton.Margin = new Padding(3, 4, 3, 4);
+            SearchButton.Name = "SearchButton";
+            SearchButton.Size = new Size(35, 38);
+            SearchButton.TabIndex = 33;
+            SearchButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += Manual_Search;
             // 
             // FileInsertButton
             // 
-            this.FileInsertButton.BackgroundImage = global::RB_Tree.Properties.Resources.file;
-            this.FileInsertButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FileInsertButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FileInsertButton.FlatAppearance.BorderSize = 0;
-            this.FileInsertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FileInsertButton.Location = new System.Drawing.Point(107, 11);
-            this.FileInsertButton.Name = "FileInsertButton";
-            this.FileInsertButton.Size = new System.Drawing.Size(35, 30);
-            this.FileInsertButton.TabIndex = 29;
-            this.FileInsertButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.FileInsertButton.UseVisualStyleBackColor = true;
-            this.FileInsertButton.Click += new System.EventHandler(this.FromFile_Insert);
+            FileInsertButton.BackgroundImage = (Image)resources.GetObject("FileInsertButton.BackgroundImage");
+            FileInsertButton.BackgroundImageLayout = ImageLayout.Zoom;
+            FileInsertButton.Cursor = Cursors.Hand;
+            FileInsertButton.FlatAppearance.BorderSize = 0;
+            FileInsertButton.FlatStyle = FlatStyle.Flat;
+            FileInsertButton.Location = new Point(107, 14);
+            FileInsertButton.Margin = new Padding(3, 4, 3, 4);
+            FileInsertButton.Name = "FileInsertButton";
+            FileInsertButton.Size = new Size(35, 38);
+            FileInsertButton.TabIndex = 29;
+            FileInsertButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            FileInsertButton.UseVisualStyleBackColor = true;
+            FileInsertButton.Click += FromFile_Insert;
             // 
             // AllDeleteButton
             // 
-            this.AllDeleteButton.BackgroundImage = global::RB_Tree.Properties.Resources.eraser;
-            this.AllDeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.AllDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AllDeleteButton.FlatAppearance.BorderSize = 0;
-            this.AllDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AllDeleteButton.Location = new System.Drawing.Point(277, 11);
-            this.AllDeleteButton.Name = "AllDeleteButton";
-            this.AllDeleteButton.Size = new System.Drawing.Size(35, 30);
-            this.AllDeleteButton.TabIndex = 32;
-            this.AllDeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.AllDeleteButton.UseVisualStyleBackColor = true;
-            this.AllDeleteButton.Click += new System.EventHandler(this.All_Delete);
+            AllDeleteButton.BackgroundImage = (Image)resources.GetObject("AllDeleteButton.BackgroundImage");
+            AllDeleteButton.BackgroundImageLayout = ImageLayout.Zoom;
+            AllDeleteButton.Cursor = Cursors.Hand;
+            AllDeleteButton.FlatAppearance.BorderSize = 0;
+            AllDeleteButton.FlatStyle = FlatStyle.Flat;
+            AllDeleteButton.Location = new Point(277, 14);
+            AllDeleteButton.Margin = new Padding(3, 4, 3, 4);
+            AllDeleteButton.Name = "AllDeleteButton";
+            AllDeleteButton.Size = new Size(35, 38);
+            AllDeleteButton.TabIndex = 32;
+            AllDeleteButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            AllDeleteButton.UseVisualStyleBackColor = true;
+            AllDeleteButton.Click += All_Delete;
             // 
             // RandInsertButton
             // 
-            this.RandInsertButton.BackgroundImage = global::RB_Tree.Properties.Resources.shuffle;
-            this.RandInsertButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RandInsertButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RandInsertButton.FlatAppearance.BorderSize = 0;
-            this.RandInsertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RandInsertButton.Location = new System.Drawing.Point(152, 11);
-            this.RandInsertButton.Name = "RandInsertButton";
-            this.RandInsertButton.Size = new System.Drawing.Size(35, 30);
-            this.RandInsertButton.TabIndex = 30;
-            this.RandInsertButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.RandInsertButton.UseVisualStyleBackColor = true;
-            this.RandInsertButton.Click += new System.EventHandler(this.Random_Insert);
+            RandInsertButton.BackgroundImage = (Image)resources.GetObject("RandInsertButton.BackgroundImage");
+            RandInsertButton.BackgroundImageLayout = ImageLayout.Zoom;
+            RandInsertButton.Cursor = Cursors.Hand;
+            RandInsertButton.FlatAppearance.BorderSize = 0;
+            RandInsertButton.FlatStyle = FlatStyle.Flat;
+            RandInsertButton.Location = new Point(152, 14);
+            RandInsertButton.Margin = new Padding(3, 4, 3, 4);
+            RandInsertButton.Name = "RandInsertButton";
+            RandInsertButton.Size = new Size(35, 38);
+            RandInsertButton.TabIndex = 30;
+            RandInsertButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            RandInsertButton.UseVisualStyleBackColor = true;
+            RandInsertButton.Click += Random_Insert;
             // 
             // ManDeleteButton
             // 
-            this.ManDeleteButton.BackgroundImage = global::RB_Tree.Properties.Resources.close;
-            this.ManDeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ManDeleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ManDeleteButton.FlatAppearance.BorderSize = 0;
-            this.ManDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ManDeleteButton.Location = new System.Drawing.Point(226, 11);
-            this.ManDeleteButton.Name = "ManDeleteButton";
-            this.ManDeleteButton.Size = new System.Drawing.Size(35, 30);
-            this.ManDeleteButton.TabIndex = 31;
-            this.ManDeleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ManDeleteButton.UseVisualStyleBackColor = true;
-            this.ManDeleteButton.Click += new System.EventHandler(this.Manual_Delete);
+            ManDeleteButton.BackgroundImage = (Image)resources.GetObject("ManDeleteButton.BackgroundImage");
+            ManDeleteButton.BackgroundImageLayout = ImageLayout.Zoom;
+            ManDeleteButton.Cursor = Cursors.Hand;
+            ManDeleteButton.FlatAppearance.BorderSize = 0;
+            ManDeleteButton.FlatStyle = FlatStyle.Flat;
+            ManDeleteButton.Location = new Point(226, 14);
+            ManDeleteButton.Margin = new Padding(3, 4, 3, 4);
+            ManDeleteButton.Name = "ManDeleteButton";
+            ManDeleteButton.Size = new Size(35, 38);
+            ManDeleteButton.TabIndex = 31;
+            ManDeleteButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            ManDeleteButton.UseVisualStyleBackColor = true;
+            ManDeleteButton.Click += Manual_Delete;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1624, 806);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.BlackDepthLabel);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.TreeDepthLabel);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.NodeCountLabel);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.DeleteTextBox);
-            this.Controls.Add(this.Numeric);
-            this.Controls.Add(this.RandomButton);
-            this.Controls.Add(this.FromFileButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.InsertTextBox);
-            this.Controls.Add(this.DrawPanel);
-            this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "MainForm";
-            this.Text = "Красно-черные деревья";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Numeric)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1382, 853);
+            Controls.Add(panel1);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(SearchTextBox);
+            Controls.Add(label7);
+            Controls.Add(BlackDepthLabel);
+            Controls.Add(label6);
+            Controls.Add(TreeDepthLabel);
+            Controls.Add(label5);
+            Controls.Add(NodeCountLabel);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(DeleteTextBox);
+            Controls.Add(Numeric);
+            Controls.Add(RandomButton);
+            Controls.Add(FromFileButton);
+            Controls.Add(label1);
+            Controls.Add(InsertTextBox);
+            Controls.Add(DrawPanel);
+            Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "MainForm";
+            Text = "Красно-черные деревья";
+            FormClosing += MainForm_FormClosing;
+            Load += MainForm_Load;
+            Resize += MainForm_Resize;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Numeric).EndInit();
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
